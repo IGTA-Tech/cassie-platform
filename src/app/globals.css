@@ -1,0 +1,202 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ============================================
+   FLOATING HEARTS ANIMATION
+   ============================================ */
+@keyframes float-heart {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(30px) rotate(15deg);
+    opacity: 0;
+  }
+}
+
+.animate-float-heart {
+  animation: float-heart linear infinite;
+}
+
+/* ============================================
+   GLASS MORPHISM STYLES
+   ============================================ */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.glass-orange {
+  background: rgba(255, 237, 213, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(249, 115, 22, 0.2);
+  box-shadow:
+    0 4px 24px rgba(249, 115, 22, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.glass-red {
+  background: rgba(254, 226, 226, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  box-shadow:
+    0 4px 24px rgba(239, 68, 68, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.glass-purple {
+  background: rgba(243, 232, 255, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  box-shadow:
+    0 4px 24px rgba(168, 85, 247, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+/* ============================================
+   TEXT GLOW EFFECTS
+   ============================================ */
+.text-glow-orange {
+  text-shadow:
+    0 0 20px rgba(249, 115, 22, 0.4),
+    0 0 40px rgba(249, 115, 22, 0.2),
+    0 0 60px rgba(249, 115, 22, 0.1);
+}
+
+.text-glow-red {
+  text-shadow:
+    0 0 20px rgba(239, 68, 68, 0.4),
+    0 0 40px rgba(239, 68, 68, 0.2),
+    0 0 60px rgba(239, 68, 68, 0.1);
+}
+
+.text-glow-purple {
+  text-shadow:
+    0 0 20px rgba(168, 85, 247, 0.4),
+    0 0 40px rgba(168, 85, 247, 0.2),
+    0 0 60px rgba(168, 85, 247, 0.1);
+}
+
+.text-glow-gradient {
+  text-shadow:
+    0 0 30px rgba(249, 115, 22, 0.5),
+    0 0 60px rgba(168, 85, 247, 0.3),
+    0 0 90px rgba(239, 68, 68, 0.2);
+}
+
+/* Animated glow pulse */
+@keyframes glow-pulse {
+  0%, 100% {
+    text-shadow:
+      0 0 20px rgba(249, 115, 22, 0.4),
+      0 0 40px rgba(168, 85, 247, 0.2);
+  }
+  50% {
+    text-shadow:
+      0 0 30px rgba(249, 115, 22, 0.6),
+      0 0 60px rgba(168, 85, 247, 0.4),
+      0 0 80px rgba(239, 68, 68, 0.2);
+  }
+}
+
+.text-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* ============================================
+   PARALLAX CARD HOVER EFFECTS
+   ============================================ */
+.parallax-card {
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.parallax-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.1),
+    0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* ============================================
+   SMOOTH SCROLLING
+   ============================================ */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ============================================
+   CUSTOM SCROLLBAR
+   ============================================ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #f97316, #a855f7, #ef4444);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ea580c, #9333ea, #dc2626);
+}
+
+/* ============================================
+   BUTTON STYLES
+   ============================================ */
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-red-500 text-white font-medium px-6 py-3 hover:shadow-[0_0_30px_rgba(249,115,22,0.3)] transition-all duration-300;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl bg-white/80 backdrop-blur border border-gray-200 text-gray-800 font-medium px-6 py-3 hover:bg-white hover:shadow-lg transition-all duration-300;
+}
+
+.btn-outline {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl border-2 border-orange-500 text-orange-600 font-medium px-6 py-3 hover:bg-orange-50 transition-all duration-300;
+}
